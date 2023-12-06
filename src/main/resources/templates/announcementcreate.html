@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Announcement Creation</title>
+    </head>
+    <body>
+        
+        <h1>Announcement Creation</h1>
+
+        <form method="POST" data-th-action="@{/announcements/processannouncement}" data-th-object="${announcement}">
+            <table>
+                <tr>
+                    <td>ID:</td>
+                    <td>
+                        <input type="number" name="annId" placeholder="annId" data-th-field="*{annId}">
+                        <span data-th-if="${#fields.hasErrors('annId')}" data-th-errors="*{annId}" data-th-errorclass="error" style="color: red;"></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Code:</td>
+                    <td>
+                        <input type="text" name="code" placeholder="code" data-th-field="*{code}">
+                        <span data-th-if="${#fields.hasErrors('code')}" data-th-errors="*{code}" data-th-errorclass="error" style="color: red;"></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Title:</td>
+                    <td>
+                        <input type="text" name="title" placeholder="title" data-th-field="*{title}">
+                        <span data-th-if="${#fields.hasErrors('title')}" data-th-errors="*{title}" data-th-errorclass="error" style="color: red;"></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Message:</td>
+                    <td>
+                        <input type="text" name="message" placeholder="message" data-th-field="*{message}">
+                        <span data-th-if="${#fields.hasErrors('message')}" data-th-errors="*{message}" data-th-errorclass="error" style="color: red;"></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Start Date:</td>
+                    <td>
+                        <input type="date" name="startDate" placeholder="startDate" data-th-field="*{startDate}">
+                        <span data-th-if="${#fields.hasErrors('startDate')}" data-th-errors="*{startDate}" data-th-errorclass="error" style="color: red;"></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <button type="submit">Submit</button>
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </body>
+</html>

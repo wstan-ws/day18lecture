@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        
+        <h1>List of Announcements</h1>
+
+        <table>
+            <thead>
+                <tr>
+                    <td>Announcement ID</td>
+                    <td>Code</td>
+                    <td>Title</td>
+                    <td>Message</td>
+                    <td>Start Date</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr data-th-each="ann : ${list}">
+                    <td data-th-text="${ann.annId}"></td>
+                    <td data-th-text="${ann.code}"></td>
+                    <td data-th-text="${ann.title}"></td>
+                    <td data-th-text="${ann.message}"></td>
+                    <td data-th-text="${ann.startDate}"></td>
+                </tr>
+            </tbody>
+        </table>
+
+    </body>
+</html>
